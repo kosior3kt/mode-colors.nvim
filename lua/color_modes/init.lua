@@ -53,10 +53,10 @@ M.setup({
    default_colors = 
    {
       cursor_color = {
-         i = colors.red,
+         i = config.colors.red,
       },
       background_color = {
-         i = colors.red,
+         i = config.colors.red,
       },
       column_marker = {
 
