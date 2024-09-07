@@ -11,9 +11,9 @@ user_colors = {}
 
 local verbose = false
 
-function M.setup(_usr_config)
-    user_colors = vim.tbl_deep_extend("force", config.default_colors, _usr_config or {})
-end
+-- function M.setup(_usr_config)
+--     user_colors = vim.tbl_deep_extend("force", config.default_colors, _usr_config or {})
+-- end
 
 ---so this is a black magic to a degree - we need to wait before execution, cause some jumps take time - 20ms should be UwU
 function changeColour()
@@ -41,27 +41,41 @@ function changeColour()
     end, 20)
 end
 
--- M.setup
--- ({
---    {i = "#FF0000"},
---    {},
---    {},
---    {},
--- })
+-- Function to deep merge user config into default config
+local function deep_merge(defaults, user_config)
+    if type(user_config) ~= "table" then
+        return user_config
+    end
+
+    for k, v in pairs(user_config) do
+        if type(v) == "table" and type(defaults[k]) == "table" then
+            defaults[k] = deep_merge(defaults[k], v)
+        else
+            defaults[k] = v
+        end
+    end
+
+    return defaults
+end
+
+-- Setup function to allow user customization
+function M.setup(user_config)
+    if not user_config then return end
+    -- Merge user configuration with default configuration
+    M.default_colors = deep_merge(M.default_colors, user_config)
+end
+
 
 M.setup({
-   default_colors = 
-   {
-      cursor_color = {
-         i = config.colors.red,
-      },
-      background_color = {
-         i = config.colors.red,
-      },
-      column_marker = {
+   cursor_color = {
+      i = config.colors.red,
+   },
+   background_color = {
+      i = config.colors.red,
+   },
+   column_marker = {
 
-      },
-   }
+   },
 })
 
 vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])   
