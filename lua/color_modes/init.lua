@@ -41,12 +41,27 @@ function changeColour()
     end, 20)
 end
 
-setup
-({
-   {i = "#FF0000"},
-   {},
-   {},
-   {},
+-- M.setup
+-- ({
+--    {i = "#FF0000"},
+--    {},
+--    {},
+--    {},
+-- })
+
+M.setup({
+   default_colors = 
+   {
+      cursor_color = {
+         i = colors.red,
+      },
+      background_color = {
+         i = colors.red,
+      },
+      column_marker = {
+
+      },
+   }
 })
 
 vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])   
