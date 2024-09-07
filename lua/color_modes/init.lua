@@ -40,15 +40,15 @@ function changeColour()
 
     end, 20)
 end
---
--- setup
--- ({
---    {i = "#FF0000"},
---    {},
---    {},
---    {},
--- })
---
+
+setup
+({
+   {i = "#FF0000"},
+   {},
+   {},
+   {},
+})
+
 vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])   
 
 changeColour() -- initial invoke
