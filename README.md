@@ -68,16 +68,16 @@ in general it should be looking something like this:
     o   - Operator-pending
     tl  - terminal
 rest of them are either variation or something weird if you are aware of them and understand them create PR or sth
-*V 
-*no
-*s 
-*ic
-*r 
-*rv
-*cv
-*ce
-*rm
-*tr
+* V 
+* no
+* s 
+* ic
+* r 
+* rv
+* cv
+* ce
+* rm
+* tr
 
 # List of available colours
 ```
