@@ -9,8 +9,6 @@ end
 
 user_colors = config.default_colors
 
-local verbose = false
-
 -- function M.setup(_usr_config)
 --     user_colors = vim.tbl_deep_extend("force", config.default_colors, _usr_config or {})
 -- end
@@ -59,9 +57,7 @@ local function deep_merge(defaults, user_config)
 end
 
 -- Setup function to allow user customization
-function M.setup(user_config, verbose)
-    verbose = verbose or "false"
-
+function M.setup(user_config)
     if not user_config then return end
     -- Merge user configuration with default configuration
     user_colors = deep_merge(config.default_colors, user_config)
