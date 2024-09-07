@@ -1,5 +1,6 @@
 local M = {}
 
+
 local config = require("color_modes.config")
 
 M.debugPrint = function(msg)
@@ -31,8 +32,8 @@ end
 
 changeColour()
 
--- vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])   -- this one is only for the first mode change
-vim.api.nvim_command([[autocmd CursorMoved * lua changeColour()]])
+vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])   
+-- vim.api.nvim_command([[autocmd CursorMoved * lua changeColour()]])  -- this one is only for the first mode change
 
 
 return M
