@@ -21,6 +21,10 @@ function changeColour()
         local mode = vim.api.nvim_get_mode().mode
         local color = user_colors.cursor_color[mode] or "none"
 
+        if color == "none" then 
+           return
+        end
+
         vim.api.nvim_command("hi! cursorline guifg=none guibg=" .. color)
 
         if user_colors.column_marker and user_colors.column_marker.use then
@@ -36,7 +40,15 @@ function changeColour()
 
     end, 20)
 end
-
+--
+-- setup
+-- ({
+--    {i = "#FF0000"},
+--    {},
+--    {},
+--    {},
+-- })
+--
 vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])   
 
 changeColour() -- initial invoke
