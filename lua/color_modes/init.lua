@@ -7,7 +7,7 @@ debugPrint = function(msg)
     print(msg)
 end
 
-user_colors = {}
+user_colors = config.default_colors
 
 local verbose = false
 
@@ -62,7 +62,7 @@ end
 function M.setup(user_config)
     if not user_config then return end
     -- Merge user configuration with default configuration
-    M.default_colors = deep_merge(M.default_colors, user_config)
+    user_colors = deep_merge(config.default_colors, user_config)
 end
 
 
