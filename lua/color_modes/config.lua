@@ -15,7 +15,7 @@ M.colors = {
 }
 
 M.default_colors = {
-    cursor_color = {
+    cursor = {
         n = M.colors.darkblue,
         i = M.colors.green,
         v = M.colors.blue,
@@ -31,14 +31,14 @@ M.default_colors = {
         rm = M.colors.cyan,
         tr = M.colors.red,
     },
-    numbers_color = {
+    numbers = {
         n = "#009dff",
         i = "#229c5f",
         c = "#aa7799",
         v = "#a234b3",
         V = "#a234b3",
     },
-    background_color = {
+    background = {
         n = "#040c42",
         i = "#032f30",
         c = "#403804",

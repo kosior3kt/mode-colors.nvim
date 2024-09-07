@@ -19,7 +19,7 @@ local verbose = false
 function changeColour()
     vim.defer_fn(function()
         local mode = vim.api.nvim_get_mode().mode
-        local color = user_colors.cursor_color[mode] or "none"
+        local color = user_colors.cursor[mode] or "none"
 
         if color == "none" then 
            return
@@ -59,7 +59,9 @@ local function deep_merge(defaults, user_config)
 end
 
 -- Setup function to allow user customization
-function M.setup(user_config)
+function M.setup(user_config, verbose)
+    verbose = verbose or "false"
+
     if not user_config then return end
     -- Merge user configuration with default configuration
     user_colors = deep_merge(config.default_colors, user_config)
@@ -67,10 +69,10 @@ end
 
 
 M.setup({
-   cursor_color = {
+   cursor = {
       i = config.colors.red,
    },
-   background_color = {
+   background = {
       i = config.colors.red,
    },
    column_marker = {
@@ -81,5 +83,8 @@ M.setup({
 vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])   
 
 changeColour() -- initial invoke
+
+M.COLOR_CONSTANTS = config.colors   --- helps interfacing
+
 return M
 
