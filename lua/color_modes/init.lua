@@ -32,7 +32,7 @@ end
 vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])
 vim.api.nvim_command([[autocmd CursorMoved * lua changeColour()]])
 
-M.debugPrint("Mode-based color changing has been enabled")
+-- M.debugPrint("Mode-based color changing has been enabled")
 
 return M
 
