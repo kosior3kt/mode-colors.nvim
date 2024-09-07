@@ -61,23 +61,23 @@ in general it should be looking something like this:
 ```
 
 # List of available modes
-    + n   - normal
-    + i   - insert
-    + v   - visual
-    + c   - command line
-    + o   - Operator-pending
-    + tl  - terminal
+    n   - normal
+    i   - insert
+    v   - visual
+    c   - command line
+    o   - Operator-pending
+    tl  - terminal
 rest of them are either variation or something weird if you are aware of them and understand them create PR or sth
-    + V 
-    + no
-    + s 
-    + ic
-    + r 
-    + rv
-    + cv
-    + ce
-    + rm
-    + tr
+*V 
+*no
+*s 
+*ic
+*r 
+*rv
+*cv
+*ce
+*rm
+*tr
 
 # List of available colours
 ```
@@ -93,3 +93,25 @@ rest of them are either variation or something weird if you are aware of them an
 ```
   
     I mean obviously you can just pass your own colours instead...
+
+# Colum Marker
+Tbh I have no clue why people even use this thing... But I use, so I might include it here as well
+
+```
+{
+    cursor = 
+   {
+   },
+   background = 
+   {
+   },
+   column_marker = 
+   {
+        use = true,                         --- go figure...
+        number = 112,                       --- on which column (counting from left this thing will show up)
+        colour = COLOR_CONSTANTS.magenta,   --- the colour of it
+   },
+}
+```
+
+

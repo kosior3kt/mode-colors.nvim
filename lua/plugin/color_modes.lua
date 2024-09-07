@@ -1,3 +1,3 @@
--- Entry point for the plugin
-require("color_modes").setup()
+-- entry point for the plugin
+require("mode-colors").setup()
 

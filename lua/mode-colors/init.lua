@@ -1,7 +1,7 @@
 local M = {}
 
 
-local config = require("color_modes.config")
+local config = require("mode-colors.config")
 
 debugPrint = function(msg)
     print(msg)
