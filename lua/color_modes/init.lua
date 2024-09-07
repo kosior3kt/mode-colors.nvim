@@ -29,10 +29,11 @@ function changeColour()
     end, 20)
 end
 
-vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])
+changeColour()
+
+-- vim.api.nvim_command([[autocmd ModeChanged * lua changeColour()]])   -- this one is only for the first mode change
 vim.api.nvim_command([[autocmd CursorMoved * lua changeColour()]])
 
--- M.debugPrint("Mode-based color changing has been enabled")
 
 return M
 
